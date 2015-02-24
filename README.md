@@ -12,5 +12,5 @@ Example homes:
 # Installing
 
 1. Download the `.crx` bundled extension from the [latest release](https://github.com/chrismetcalf/fixer-upper/releases)
-2. Open up [chrome://extensions](chrome://extensions) (you may need to type that in by hand)
+2. Open up <chrome://extensions> (you may need to type that in by hand)
 3. Drag and drop the `.crx` file into your Chrome window and accept the install warning
