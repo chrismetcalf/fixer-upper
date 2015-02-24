@@ -1,0 +1,16 @@
+{
+  "manifest_version" : 2,
+  "name": "Fixer Upper",
+  "version": "0.1",
+  "description": "Prototype open data Chrome extension",
+  "content_scripts": [ {
+    "matches" : [
+      "http://www.zillow.com/homes/*",
+      "https://www.zillow.com/homes/*",
+      "http://www.zillow.com/homedetails/*",
+      "https://www.zillow.com/homedetails/*"
+    ],
+    "js": ["jquery-2.1.3.min.js", "fixer-upper.js"],
+    "run_at": "document_end"
+  } ]
+}
