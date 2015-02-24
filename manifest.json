@@ -5,8 +5,6 @@
   "description": "Prototype open data Chrome extension",
   "content_scripts": [ {
     "matches" : [
-      "http://www.zillow.com/homes/*",
-      "https://www.zillow.com/homes/*",
       "http://www.zillow.com/homedetails/*",
       "https://www.zillow.com/homedetails/*"
     ],

@@ -26,18 +26,24 @@ $(document).ready(function() {
           // Take our victim and update some stuff
           var block = $("#hdp-tax-history").clone();
           block.find("h2").text("Building Permits");
-          block.find("p").html('Find more information about building permits by viewing the <a href="http://zillow.demo.socrata.com/d/m393-mbxq">source dataset</a>.');
+          block.find("p").html('Find more information about building permits by viewing the <a href="http://zillow.demo.socrata.com/d/m393-mbxq">source dataset</a>');
 
           // Blow away the table contents and then add our own header
           block.find("table tr").remove();
-          block.find("table").append("<tr><th>Permit #</th><th>Type</th><th>Sub-Type</th></tr>");
+          block.find("table").append("<tr><th>Issued Date</th><th>Permit #</th><th>Type</th><th>Sub-Type</th><th>Status</th></tr>");
 
           // Use the template to add some new rows in
           $.each(data, function(idx, permit) {
             var row = $("<tr>");
+            var date = "--";
+            if(permit.issueddate) {
+              date = (new Date(permit.issueddate)).toLocaleDateString();
+            }
+            row.append('<td>' + date + '</td>');
             row.append('<td><a target="_blank" href="' + permit.link + '">' + permit.permitnum + '</a></td>');
             row.append('<td>' + permit.permittype + '</td>');
             row.append('<td>' + permit.work_type_extra + '</td>');
+            row.append('<td>' + permit.statuscurrent + '</td>');
             block.find('table').append(row);
           });
 
